@@ -12,6 +12,10 @@
     "build": "node scripts/build.js",
     "doc": "node scripts/doc.js"
   },
+  "files": [
+    "src/**/*",
+    "doc/**/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/magynhard/typifier.git"
