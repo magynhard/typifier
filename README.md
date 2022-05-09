@@ -32,11 +32,15 @@ Typifier = require('typifier');
 
 // -- code samples --
 Typifier.getType("sample");
-// => "String"
+// => "string"
 Typifier.getType([1,2,3]);
 // => "Array"
 Typifier.isArray([1,2,3]);
 // => true 
+Typifier.is('Array',"no_array");
+// => false 
+Typifier.is('MyClass',new MyClass());
+// => true
 ```
 
 <a name="installation"></a>
@@ -79,10 +83,8 @@ Optionally you may the source file to your build pipeline, if you are using webp
 <a name="documentation"></a>
 
 ## Documentation
+See JS doc [here](doc/typifier.jsdoc.md).
 
-### Supported types
-
-* TODO
 
 <a name="contributing"></a>
 

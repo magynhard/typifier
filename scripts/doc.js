@@ -5,6 +5,9 @@ const fs = require("fs");
 const {exec} = require("child_process");
 const {execSync} = require("child_process");
 
+require('ruby-nice/array');
+require('lucky-case/string');
+
 const files_to_doc = [
     './src/typifier/typifier.js'
 ]

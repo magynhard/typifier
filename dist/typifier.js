@@ -1,8 +1,15 @@
-//<!-- MODULE -->//
-if (typeof require === 'function' && typeof module !== 'undefined' && module.exports) {
-    var LuckyCase = require('lucky-case');
-}
-//<!-- /MODULE -->//
+/**
+ * typifier
+ *
+ * The javascript library to get the type of a given variable.
+ *
+ * @version 0.0.2
+ * @date 2022-05-09T11:19:49.865Z
+ * @link https://github.com/magynhard/typifier
+ * @author Matthäus J. N. Beyrle
+ * @copyright Matthäus J. N. Beyrle
+ */
+
 
 /**
  * Typifier
@@ -246,8 +253,4 @@ class Typifier {
  */
 Typifier._version = "0.0.2";
 
-//<!-- MODULE -->//
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = Typifier;
-}
-//<!-- /MODULE -->//
+
