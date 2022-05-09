@@ -3,8 +3,8 @@
  *
  * The javascript library to get or check the type of a given variable.
  *
- * @version 0.0.5
- * @date 2022-05-09T20:08:44.063Z
+ * @version 0.0.6
+ * @date 2022-05-09T20:27:01.823Z
  * @link https://github.com/magynhard/typifier
  * @author Matthäus J. N. Beyrle
  * @copyright Matthäus J. N. Beyrle
@@ -251,6 +251,6 @@ class Typifier {
  * @type {string}
  * @private
  */
-Typifier._version = "0.0.5";
+Typifier._version = "0.0.6";
 
 
