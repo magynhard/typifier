@@ -19,7 +19,7 @@ const version_regex = /"version":\s*"([^"]*)"/sgm;
 const release_header_template = `/**
  * typifier
  *
- * The javascript library to get the type of a given variable.
+ * The javascript library to get or check the type of a given variable.
  *
  * @version {{version}}
  * @date {{date}}

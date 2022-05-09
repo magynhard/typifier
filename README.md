@@ -5,7 +5,7 @@
 ![npm](https://img.shields.io/npm/dt/typifier?color=blue&style=plastic)
 [![License: MIT](https://img.shields.io/badge/License-MIT-gold.svg?style=plastic&logo=mit)](LICENSE)
 
-> The javascript library to get the type of a given variable.
+> The javascript library to get or check the type of a given variable.
 
 # Table of contents
 

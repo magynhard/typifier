@@ -3,7 +3,7 @@
 ## Typifier
 Typifier
 
-The javascript library to get the type of a given variable.
+The javascript library to get or check the type of a given variable.
 
 * [Typifier](#Typifier)
     * [.isArray(value)](#Typifier.isArray) &rarr; <code>boolean</code>

@@ -1,10 +1,10 @@
 /**
  * typifier
  *
- * The javascript library to get the type of a given variable.
+ * The javascript library to get or check the type of a given variable.
  *
- * @version 0.0.4
- * @date 2022-05-09T20:05:35.716Z
+ * @version 0.0.5
+ * @date 2022-05-09T20:08:44.063Z
  * @link https://github.com/magynhard/typifier
  * @author Matthäus J. N. Beyrle
  * @copyright Matthäus J. N. Beyrle
@@ -14,7 +14,7 @@
 /**
  * Typifier
  *
- * The javascript library to get the type of a given variable.
+ * The javascript library to get or check the type of a given variable.
  *
  */
 class Typifier {
@@ -251,6 +251,6 @@ class Typifier {
  * @type {string}
  * @private
  */
-Typifier._version = "0.0.4";
+Typifier._version = "0.0.5";
 
 

@@ -7,7 +7,7 @@ if (typeof require === 'function' && typeof module !== 'undefined' && module.exp
 /**
  * Typifier
  *
- * The javascript library to get the type of a given variable.
+ * The javascript library to get or check the type of a given variable.
  *
  */
 class Typifier {
@@ -244,7 +244,7 @@ class Typifier {
  * @type {string}
  * @private
  */
-Typifier._version = "0.0.4";
+Typifier._version = "0.0.5";
 
 //<!-- MODULE -->//
 if (typeof module !== 'undefined' && module.exports) {
