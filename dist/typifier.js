@@ -3,8 +3,8 @@
  *
  * The javascript library to get the type of a given variable.
  *
- * @version 0.0.2
- * @date 2022-05-09T11:19:49.865Z
+ * @version 0.0.3
+ * @date 2022-05-09T11:52:25.735Z
  * @link https://github.com/magynhard/typifier
  * @author Matthäus J. N. Beyrle
  * @copyright Matthäus J. N. Beyrle
@@ -177,6 +177,9 @@ class Typifier {
     /**
      * Check if the given value is of the given type.
      *
+     * @example
+     *  Typifier.is('Array',[1,2,3]) // => true
+     *
      * @param {string} type
      * @param {any} value
      * @returns {boolean} true if the value is of the given type
@@ -192,11 +195,8 @@ class Typifier {
      *
      * @example
      *  'Object'
+     * @example
      *  'string'
-     *  'number'
-     *  'boolean'
-     *  'Array'
-     *  'MyClass'
      *
      * @param {any} value
      * @returns {string} type in pascal case format
@@ -251,6 +251,6 @@ class Typifier {
  * @type {string}
  * @private
  */
-Typifier._version = "0.0.2";
+Typifier._version = "0.0.3";
 
 
