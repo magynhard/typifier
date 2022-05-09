@@ -1,6 +1,6 @@
 {
   "name": "typifier",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "The javascript library to get the type of a given variable.",
   "exports": {
     ".": "./src/typifier/typifier.js",
@@ -10,8 +10,7 @@
   "scripts": {
     "test": "jasmine",
     "build": "node scripts/build.js",
-    "doc": "node scripts/doc.js",
-    "publish": "npm publish"
+    "doc": "node scripts/doc.js"
   },
   "repository": {
     "type": "git",
