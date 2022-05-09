@@ -170,6 +170,9 @@ class Typifier {
     /**
      * Check if the given value is of the given type.
      *
+     * @example
+     *  Typifier.is('Array',[1,2,3]) // => true
+     *
      * @param {string} type
      * @param {any} value
      * @returns {boolean} true if the value is of the given type
@@ -185,11 +188,8 @@ class Typifier {
      *
      * @example
      *  'Object'
+     * @example
      *  'string'
-     *  'number'
-     *  'boolean'
-     *  'Array'
-     *  'MyClass'
      *
      * @param {any} value
      * @returns {string} type in pascal case format

@@ -201,6 +201,11 @@ Check if the given value is of the given type.
 | type | <code>string</code> | 
 | value | <code>any</code> | 
 
+
+**Example**
+```js
+Typifier.is('Array',[1,2,3]) // => true
+```
 <a name="Typifier.getType"></a>
 
 ### Typifier.getType(value) &rarr; <code>string</code>
@@ -217,9 +222,9 @@ Primitive types are lower case.
 **Example**
 ```js
 'Object'
- 'string'
- 'number'
- 'boolean'
- 'Array'
- 'MyClass'
+```
+
+**Example**
+```js
+'string'
 ```
