@@ -48,10 +48,10 @@ class Typifier {
     }
 
     /**
-     * Check if given variable is of type String
+     * Check if given variable is of type String (class instance)
      *
      * @param {any} value
-     * @returns {boolean} true if 'string' or instance of class 'String', otherwise false
+     * @returns {boolean} true if instance of class 'String', otherwise false
      */
     static isStringClass(value) {
         return value instanceof Object && value.constructor.name === 'String';

@@ -60,9 +60,9 @@ Check if given variable is of type string (primitive)
 <a name="Typifier.isStringClass"></a>
 
 ### Typifier.isStringClass(value) &rarr; <code>boolean</code>
-Check if given variable is of type String
+Check if given variable is of type String (class instance)
 
-**Returns**: <code>boolean</code> - true if 'string' or instance of class 'String', otherwise false  
+**Returns**: <code>boolean</code> - true if instance of class 'String', otherwise false  
 
 | Param | Type |
 | --- | --- |
