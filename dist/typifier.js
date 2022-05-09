@@ -3,8 +3,8 @@
  *
  * The javascript library to get the type of a given variable.
  *
- * @version 0.0.3
- * @date 2022-05-09T11:52:25.735Z
+ * @version 0.0.4
+ * @date 2022-05-09T20:05:35.716Z
  * @link https://github.com/magynhard/typifier
  * @author Matthäus J. N. Beyrle
  * @copyright Matthäus J. N. Beyrle
@@ -55,10 +55,10 @@ class Typifier {
     }
 
     /**
-     * Check if given variable is of type String
+     * Check if given variable is of type String (class instance)
      *
      * @param {any} value
-     * @returns {boolean} true if 'string' or instance of class 'String', otherwise false
+     * @returns {boolean} true if instance of class 'String', otherwise false
      */
     static isStringClass(value) {
         return value instanceof Object && value.constructor.name === 'String';
@@ -251,6 +251,6 @@ class Typifier {
  * @type {string}
  * @private
  */
-Typifier._version = "0.0.3";
+Typifier._version = "0.0.4";
 
 
