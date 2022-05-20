@@ -11,11 +11,14 @@ if (typeof require === 'function' && typeof module !== 'undefined' && module.exp
  *
  */
 class Typifier {
+    /**
+     * Get the version of the used library
+     * @returns {string}
+     */
     static getVersion() {
         const self = Typifier;
         return self._version;
     }
-
 
     /**
      * Check if given variable is of type Array
