@@ -195,7 +195,7 @@ class Typifier {
      * @returns {string} type in pascal case format
      */
     static getType(value) {
-        const self = SipaHelper;
+        const self = Typifier;
         if (self.isArray(value)) {
             return 'Array';
         } else if (self.isObject(value)) {
