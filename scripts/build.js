@@ -65,6 +65,7 @@ function updateJsProjectVersion() {
     let project_js = fs.readFileSync('./src/typifier/typifier.js','utf8');
     project_js = project_js.replace(/Typifier\._version\s*=\s*"[^"]+";/gm, `Typifier._version = "${new_version}";`)
     fs.writeFileSync('./src/typifier/typifier.js', project_js, 'utf8');
+    return new_version;
 }
 
 console.log(chalk.yellow('##############################'));

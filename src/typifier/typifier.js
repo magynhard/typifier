@@ -244,7 +244,7 @@ class Typifier {
  * @type {string}
  * @private
  */
-Typifier._version = "0.0.6";
+Typifier._version = "0.0.8";
 
 //<!-- MODULE -->//
 if (typeof module !== 'undefined' && module.exports) {

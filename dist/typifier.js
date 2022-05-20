@@ -3,8 +3,8 @@
  *
  * The javascript library to get or check the type of a given variable.
  *
- * @version 0.0.6
- * @date 2022-05-09T20:27:01.823Z
+ * @version 0.0.8
+ * @date 2022-05-20T14:33:45.942Z
  * @link https://github.com/magynhard/typifier
  * @author Matthäus J. N. Beyrle
  * @copyright Matthäus J. N. Beyrle
@@ -202,7 +202,7 @@ class Typifier {
      * @returns {string} type in pascal case format
      */
     static getType(value) {
-        const self = SipaHelper;
+        const self = Typifier;
         if (self.isArray(value)) {
             return 'Array';
         } else if (self.isObject(value)) {
@@ -251,6 +251,6 @@ class Typifier {
  * @type {string}
  * @private
  */
-Typifier._version = "0.0.6";
+Typifier._version = "0.0.8";
 
 
