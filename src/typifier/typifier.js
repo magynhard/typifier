@@ -81,6 +81,36 @@ class Typifier {
     }
 
     /**
+     * Check if given variable is a valid number inside a string that evaluates to a number in Javascript.
+     *
+     * @example
+     *      // valid number strings
+     *      '200'
+     *      '25.75'
+     *      '10.'
+     *      '.5'
+     *      '500_000'
+     *
+     * @param {any} value
+     * @returns {boolean} true if valid JavaScript number inside string
+     */
+    static isNumberString(value) {
+        const self = Typifier;
+        if(!(self.isString(value) || self.isStringClass(value))) return false;
+        const number_regex = /^[0-9._]+$/g
+        if(value.match(number_regex)) {
+            try {
+                eval(value);
+                return true;
+            } catch (e) {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    /**
      * Check if given variable is of type Date
      *
      * @param {any} value

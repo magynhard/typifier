@@ -26,7 +26,7 @@
 // -- node js --
 Typifier = require('typifier');
 // -- browser --
-<script type="text/javascript" src="js/lib/typifier.min.js"></script>
+<script type="text/javascript" src="js/lib/typifier.bundle.js"></script>
 
 
 
@@ -40,6 +40,8 @@ Typifier.isArray([1,2,3]);
 Typifier.is('Array',"no_array");
 // => false 
 Typifier.is('MyClass',new MyClass());
+// => true
+Typifier.isNumberString('50.25');
 // => true
 ```
 
@@ -69,16 +71,22 @@ npm install typifier
 
 ### Browser
 
-Download the latest build `typifier.min.js` from the folder `dist` or get the latest release
-and put it in an appropriate folder of your project, e.g. `js/lib`
+Download the latest [release on Github](https://github.com/magynhard/typifier/releases) or the from the folder `dist` and put it in an appropriate folder of your project, e.g. `js/lib`
 and reference it by a script tag in your project:
 
 ```html
 
-<script type="text/javascript" src="js/lib/typifier.min.js"></script>
+<script type="text/javascript" src="js/lib/typifier.bundle.js"></script>
 ```
 
-Optionally you may the source file to your build pipeline, if you are using webpack, brunch or any other packager.
+Optionally you may add the source file to your build pipeline, if you are using webpack, brunch or any other packager.
+
+#### Bundle releases
+As `typifier` depends on [LuckyCase](https://github.com/magynhard/lucky-case), there is also a bundle release called `typifier.bundle.js` where the latter is included. If you already use [LuckyCase](https://github.com/magynhard/lucky-case) separately, use the default version `typifier.js` without included dependencies. If you don't know what you should use, use the bundled release!
+
+#### Minified releases
+If you prefer minified builds, use the `*.min.js` version. Be aware that they do not contain any javascript documentation that may be very useful when working with a powerful IDE.
+
 
 <a name="documentation"></a>
 
