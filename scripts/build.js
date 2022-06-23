@@ -30,11 +30,18 @@ const release_header_template = `/**
 `;
 
 const builds = {
-    default_build: {
+    default: {
         destination_file: build_destination_dir + 'typifier.js',
         destination_min_file: build_destination_dir + 'typifier.min.js',
         source_files: [
-            './src/typifier/typifier.js'
+            './src/typifier/typifier.js',
+    ]},
+    bundle: {
+        destination_file: build_destination_dir + 'typifier.bundle.js',
+        destination_min_file: build_destination_dir + 'typifier.bundle.min.js',
+        source_files: [
+            './src/typifier/typifier.js',
+            './node_modules/lucky-case/dist/lucky-case.js'
     ]}
 }
 
