@@ -3,8 +3,8 @@
  *
  * The javascript library to get or check the type of a given variable.
  *
- * @version 0.0.10
- * @date 2022-05-20T16:39:57.200Z
+ * @version 0.0.11
+ * @date 2022-06-23T15:43:32.336Z
  * @link https://github.com/magynhard/typifier
  * @author Matthäus J. N. Beyrle
  * @copyright Matthäus J. N. Beyrle
@@ -85,6 +85,36 @@ class Typifier {
      */
     static isNumberClass(value) {
         return value instanceof Object && value.constructor.name === 'Number';
+    }
+
+    /**
+     * Check if given variable is a valid number inside a string that evaluates to a number in Javascript.
+     *
+     * @example
+     *      // valid number strings
+     *      '200'
+     *      '25.75'
+     *      '10.'
+     *      '.5'
+     *      '500_000'
+     *
+     * @param {any} value
+     * @returns {boolean} true if valid JavaScript number inside string
+     */
+    static isNumberString(value) {
+        const self = Typifier;
+        if(!(self.isString(value) || self.isStringClass(value))) return false;
+        const number_regex = /^[0-9._]+$/g
+        if(value.match(number_regex)) {
+            try {
+                eval(value);
+                return true;
+            } catch (e) {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -254,6 +284,6 @@ class Typifier {
  * @type {string}
  * @private
  */
-Typifier._version = "0.0.10";
+Typifier._version = "0.0.11";
 
 
