@@ -3,8 +3,8 @@
  *
  * The javascript library to get or check the type of a given variable.
  *
- * @version 0.0.11
- * @date 2022-06-23T15:43:32.344Z
+ * @version 0.0.12
+ * @date 2022-07-05T10:55:11.247Z
  * @link https://github.com/magynhard/typifier
  * @author Matthäus J. N. Beyrle
  * @copyright Matthäus J. N. Beyrle
@@ -97,6 +97,7 @@ class Typifier {
      *      '10.'
      *      '.5'
      *      '500_000'
+     *      '0x12F'
      *
      * @param {any} value
      * @returns {boolean} true if valid JavaScript number inside string
@@ -104,8 +105,9 @@ class Typifier {
     static isNumberString(value) {
         const self = Typifier;
         if(!(self.isString(value) || self.isStringClass(value))) return false;
-        const number_regex = /^[0-9._]+$/g
-        if(value.match(number_regex)) {
+        const number_regex = /^[0-9._]+$/g;
+        const hex_regex = /^0[xX][0-9A-Fa-f]+$/g;
+        if(value.match(number_regex) || value.match(hex_regex)) {
             try {
                 eval(value);
                 return true;
@@ -284,7 +286,7 @@ class Typifier {
  * @type {string}
  * @private
  */
-Typifier._version = "0.0.11";
+Typifier._version = "0.0.12";
 
 
 /**

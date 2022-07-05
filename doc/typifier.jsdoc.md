@@ -6,12 +6,14 @@ Typifier
 The javascript library to get or check the type of a given variable.
 
 * [Typifier](#Typifier)
+    * [.getVersion()](#Typifier.getVersion) &rarr; <code>string</code>
     * [.isArray(value)](#Typifier.isArray) &rarr; <code>boolean</code>
     * [.isObject(value)](#Typifier.isObject) &rarr; <code>boolean</code>
     * [.isString(value)](#Typifier.isString) &rarr; <code>boolean</code>
     * [.isStringClass(value)](#Typifier.isStringClass) &rarr; <code>boolean</code>
     * [.isNumber(value)](#Typifier.isNumber) &rarr; <code>boolean</code>
     * [.isNumberClass(value)](#Typifier.isNumberClass) &rarr; <code>boolean</code>
+    * [.isNumberString(value)](#Typifier.isNumberString) &rarr; <code>boolean</code>
     * [.isDate(value)](#Typifier.isDate) &rarr; <code>boolean</code>
     * [.isRegExp(value)](#Typifier.isRegExp) &rarr; <code>boolean</code>
     * [.isNaN(value)](#Typifier.isNaN) &rarr; <code>boolean</code>
@@ -24,6 +26,10 @@ The javascript library to get or check the type of a given variable.
     * [.is(type, value)](#Typifier.is) &rarr; <code>boolean</code>
     * [.getType(value)](#Typifier.getType) &rarr; <code>string</code>
 
+<a name="Typifier.getVersion"></a>
+
+### Typifier.getVersion() &rarr; <code>string</code>
+Get the version of the used library
 <a name="Typifier.isArray"></a>
 
 ### Typifier.isArray(value) &rarr; <code>boolean</code>
@@ -90,6 +96,28 @@ Check if given variable is of type Number (class instance)
 | --- | --- |
 | value | <code>any</code> | 
 
+<a name="Typifier.isNumberString"></a>
+
+### Typifier.isNumberString(value) &rarr; <code>boolean</code>
+Check if given variable is a valid number inside a string that evaluates to a number in Javascript.
+
+**Returns**: <code>boolean</code> - true if valid JavaScript number inside string  
+
+| Param | Type |
+| --- | --- |
+| value | <code>any</code> | 
+
+
+**Example**
+```js
+// valid number strings
+     '200'
+     '25.75'
+     '10.'
+     '.5'
+     '500_000'
+     '0x12F'
+```
 <a name="Typifier.isDate"></a>
 
 ### Typifier.isDate(value) &rarr; <code>boolean</code>
