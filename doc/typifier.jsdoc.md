@@ -23,6 +23,7 @@ The javascript library to get or check the type of a given variable.
     * [.isBoolean(value)](#Typifier.isBoolean) &rarr; <code>boolean</code>
     * [.isBooleanClass(value)](#Typifier.isBooleanClass) &rarr; <code>boolean</code>
     * [.isFunction(value)](#Typifier.isFunction) &rarr; <code>boolean</code>
+    * [.isClass(value)](#Typifier.isClass) &rarr; <code>boolean</code>
     * [.is(type, value)](#Typifier.is) &rarr; <code>boolean</code>
     * [.getType(value)](#Typifier.getType) &rarr; <code>string</code>
 
@@ -212,6 +213,17 @@ Check if given variable is of type Boolean (class instance)
 Check if given variable is of type function
 
 **Returns**: <code>boolean</code> - true if function, otherwise false  
+
+| Param | Type |
+| --- | --- |
+| value | <code>any</code> | 
+
+<a name="Typifier.isClass"></a>
+
+### Typifier.isClass(value) &rarr; <code>boolean</code>
+Check if given variable is of type class
+
+**Returns**: <code>boolean</code> - true if class, otherwise false  
 
 | Param | Type |
 | --- | --- |

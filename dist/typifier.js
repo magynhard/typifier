@@ -3,8 +3,8 @@
  *
  * The javascript library to get or check the type of a given variable.
  *
- * @version 0.0.12
- * @date 2022-07-05T10:55:11.240Z
+ * @version 0.0.13
+ * @date 2022-08-09T21:14:51.940Z
  * @link https://github.com/magynhard/typifier
  * @author Matthäus J. N. Beyrle
  * @copyright Matthäus J. N. Beyrle
@@ -74,7 +74,8 @@ class Typifier {
      * @returns {boolean} true if 'number', otherwise false
      */
     static isNumber(value) {
-        return typeof value === 'number';
+        const self = Typifier;
+        return typeof value === 'number' && !self.isNaN(value) && !self.isInfinity(value);
     }
 
     /**
@@ -176,7 +177,7 @@ class Typifier {
      * @returns {boolean} true if null, otherwise false
      */
     static isNull(value) {
-        return typeof value === null;
+        return typeof value === 'object' && value === null;
     }
 
     /**
@@ -206,7 +207,17 @@ class Typifier {
      * @returns {boolean} true if function, otherwise false
      */
     static isFunction(value) {
-        return typeof value === 'function';
+        return typeof value === 'function' && value.constructor.name === 'Function' && (typeof value.prototype === 'undefined' || value.prototype && value.prototype.constructor && ! value.prototype.constructor.name);
+    }
+
+    /**
+     * Check if given variable is of type class
+     *
+     * @param {any} value
+     * @returns {boolean} true if class, otherwise false
+     */
+    static isClass(value) {
+        return typeof value === 'function' && value.constructor.name === 'Function' && (value.prototype && value.prototype.constructor && value.prototype.constructor.name);
     }
 
     /**
@@ -268,12 +279,16 @@ class Typifier {
             return 'Boolean';
         } else if (self.isFunction(value)) {
             return 'function';
+        } else if (self.isClass(value)) {
+            return 'class';
         } else {
             let type = 'Unknown';
             if (value && value.constructor) {
                 type = value.constructor.name;
             } else if (value && value.prop && value.prop.constructor) {
                 type = value.prop.constructor;
+            } else if (value && value.prototype && value.prototype.constructor && value.prototype.constructor.name) {
+                type = value.prototype.constructor.name;
             } else {
                 type = typeof value;
             }
@@ -286,6 +301,6 @@ class Typifier {
  * @type {string}
  * @private
  */
-Typifier._version = "0.0.12";
+Typifier._version = "0.0.13";
 
 

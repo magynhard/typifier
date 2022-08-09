@@ -1,6 +1,6 @@
 {
   "name": "typifier",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "The javascript library to get or check the type of a given variable.",
   "exports": {
     ".": "./src/typifier/typifier.js",
