@@ -229,6 +229,24 @@ class Typifier {
     }
 
     /**
+     * Check if the given variable is set (is not undefined, null or NaN).
+     * Valid values like 'false', a empty string or '0' return true.
+     *
+     * @example
+     *  let a;
+     *  let b = 0;
+     *  Typifier.isSet(a) // => false
+     *  Typifier.isSet(b) // => true
+     *
+     * @param {any} variable
+     * @returns {boolean} true if the value is set
+     */
+    static isSet(variable) {
+        const self = Typifier;
+        return !self.isUndefined(variable) && !self.isNull(variable) && !self.isNaN(variable);
+    }
+
+    /**
      * Get the type of the given value.
      * Primitive types are lower case.
      *

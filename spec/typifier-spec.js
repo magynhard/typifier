@@ -248,12 +248,14 @@ describe('Typifier', function () {
     });
     describe('.isFunction()', function () {
         it('can recognize anonymous arrow function value', function () {
-            [() => {}].eachWithIndex((val, i) => {
+            [() => {
+            }].eachWithIndex((val, i) => {
                 expect(Typifier.isFunction(val)).toEqual(true, val);
             });
         });
         it('can recognize anonymous function value', function () {
-            [function () {}].eachWithIndex((val, i) => {
+            [function () {
+            }].eachWithIndex((val, i) => {
                 expect(Typifier.isFunction(val)).toEqual(true, val);
             });
         });
@@ -276,7 +278,9 @@ describe('Typifier', function () {
             expect(Typifier.isFunction(NaN)).toEqual(false);
         });
         it('can recognize invalid function (class)', function () {
-            class TestClass {}
+            class TestClass {
+            }
+
             expect(Typifier.isFunction(TestClass)).toEqual(false);
         });
     });
@@ -303,6 +307,39 @@ describe('Typifier.getType', function () {
         [new Number(1), new Number(1.1), new Number(1.), new Number(.1), new Number(500_000), new Number(500.0_1), new Number(1_5.), new Number(0x111), new Number(0xA0F), new Number(0x0)].eachWithIndex((val, i) => {
             expect(Typifier.getType(val)).toEqual('Number');
         });
+    });
+});
+
+//----------------------------------------------------------------------------------------------------
+
+describe('Typifier.isSet', function () {
+    beforeEach(function () {
+    });
+    // falsy
+    it('recognizes a undefined variable', function () {
+        let a;
+        expect(Typifier.isSet(a)).toEqual(false);
+    });
+    it('recognizes a variable of null value', function () {
+        let a = null;
+        expect(Typifier.isSet(a)).toEqual(false);
+    });
+    it('recognizes a NaN variable', function () {
+        let a = NaN;
+        expect(Typifier.isSet(a)).toEqual(false);
+    });
+    // truthy
+    it('recognizes a variable of value 0', function () {
+        let a = 0;
+        expect(Typifier.isSet(a)).toEqual(true);
+    });
+    it('recognizes a variable of value false', function () {
+        let a = false;
+        expect(Typifier.isSet(a)).toEqual(true);
+    });
+    it('recognizes a variable with empty string', function () {
+        let a = '';
+        expect(Typifier.isSet(a)).toEqual(true);
     });
 });
 

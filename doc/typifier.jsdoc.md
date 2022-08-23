@@ -25,6 +25,7 @@ The javascript library to get or check the type of a given variable.
     * [.isFunction(value)](#Typifier.isFunction) &rarr; <code>boolean</code>
     * [.isClass(value)](#Typifier.isClass) &rarr; <code>boolean</code>
     * [.is(type, value)](#Typifier.is) &rarr; <code>boolean</code>
+    * [.isSet(variable)](#Typifier.isSet) &rarr; <code>boolean</code>
     * [.getType(value)](#Typifier.getType) &rarr; <code>string</code>
 
 <a name="Typifier.getVersion"></a>
@@ -245,6 +246,26 @@ Check if the given value is of the given type.
 **Example**
 ```js
 Typifier.is('Array',[1,2,3]) // => true
+```
+<a name="Typifier.isSet"></a>
+
+### Typifier.isSet(variable) &rarr; <code>boolean</code>
+Check if the given variable is set (is not undefined, null or NaN).
+Valid values like 'false', a empty string or '0' return true.
+
+**Returns**: <code>boolean</code> - true if the value is set  
+
+| Param | Type |
+| --- | --- |
+| variable | <code>any</code> | 
+
+
+**Example**
+```js
+let a;
+ let b = 0;
+ Typifier.isSet(a) // => false
+ Typifier.isSet(b) // => true
 ```
 <a name="Typifier.getType"></a>
 
