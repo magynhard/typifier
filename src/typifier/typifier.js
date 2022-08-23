@@ -312,7 +312,7 @@ class Typifier {
  * @type {string}
  * @private
  */
-Typifier._version = "0.0.14";
+Typifier._version = "0.1.1";
 
 //<!-- MODULE -->//
 if (typeof module !== 'undefined' && module.exports) {

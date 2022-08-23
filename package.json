@@ -1,15 +1,17 @@
 {
   "name": "typifier",
-  "version": "0.0.14",
+  "version": "0.1.1",
   "description": "The javascript library to get or check the type of a given variable.",
   "exports": {
     ".": "./src/typifier/typifier.js",
     "./": "./src/typifier/"
   },
   "main": "src/typifier/typifier.js",
+  "types": "src/typifier/typifier.d.ts",
   "scripts": {
     "test": "jasmine",
-    "build": "node scripts/build.js",
+    "build": "node scripts/build.js && yarn build_types",
+    "build_types": "yarn tsc src/**/*.js --declaration --allowJs --emitDeclarationOnly --outDir src/typifier",
     "doc": "node scripts/doc.js"
   },
   "files": [
@@ -30,7 +32,8 @@
     "jsdoc": "^3.6.6",
     "jsdoc-to-markdown": "^6.0.1",
     "ruby-nice": "^0.1.5",
-    "uglify-js": "^3.12.1"
+    "uglify-js": "^3.12.1",
+    "typescript": "^4.7.4"
   },
   "keywords": [
     "javascript",
