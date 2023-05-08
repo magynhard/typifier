@@ -1,8 +1,8 @@
 # typifier
 
-[![npm](https://img.shields.io/npm/v/typifier?color=default&style=plastic&logo=npm)](https://www.npmjs.com/package/typifier)
+[![npm package](https://img.shields.io/npm/v/typifier?color=default&style=plastic&logo=npm)](https://www.npmjs.com/package/typifier)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/magynhard/typifier?color=default&label=browser&logo=javascript&style=plastic)](https://github.com/magynhard/typifier/releases)
-![npm](https://img.shields.io/npm/dt/typifier?color=blue&style=plastic)
+![downloads](https://img.shields.io/npm/dt/typifier?color=blue&style=plastic)
 [![License: MIT](https://img.shields.io/badge/License-MIT-gold.svg?style=plastic&logo=mit)](LICENSE)
 
 > The javascript library to get or check the type of a given variable.
