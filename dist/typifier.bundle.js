@@ -3,8 +3,8 @@
  *
  * The javascript library to get or check the type of a given variable.
  *
- * @version 0.1.1
- * @date 2022-08-23T13:29:24.683Z
+ * @version 0.1.2
+ * @date 2023-07-14T13:09:59.312Z
  * @link https://github.com/magynhard/typifier
  * @author Matthäus J. N. Beyrle
  * @copyright Matthäus J. N. Beyrle
@@ -236,7 +236,7 @@ class Typifier {
     }
 
     /**
-     * Check if the given variable is set (is not undefined, null or NaN).
+     * Check if the given variable is set (is not 'undefined' or 'null').
      * Valid values like 'false', a empty string or '0' return true.
      *
      * @example
@@ -250,7 +250,7 @@ class Typifier {
      */
     static isSet(variable) {
         const self = Typifier;
-        return !self.isUndefined(variable) && !self.isNull(variable) && !self.isNaN(variable);
+        return !self.isUndefined(variable) && !self.isNull(variable);
     }
 
     /**
@@ -319,7 +319,7 @@ class Typifier {
  * @type {string}
  * @private
  */
-Typifier._version = "0.1.1";
+Typifier._version = "0.1.2";
 
 
 /**
