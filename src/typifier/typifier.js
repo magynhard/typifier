@@ -229,7 +229,7 @@ class Typifier {
     }
 
     /**
-     * Check if the given variable is set (is not undefined, null or NaN).
+     * Check if the given variable is set (is not 'undefined' or 'null').
      * Valid values like 'false', a empty string or '0' return true.
      *
      * @example
