@@ -243,7 +243,7 @@ class Typifier {
      */
     static isSet(variable) {
         const self = Typifier;
-        return !self.isUndefined(variable) && !self.isNull(variable) && !self.isNaN(variable);
+        return !self.isUndefined(variable) && !self.isNull(variable);
     }
 
     /**
