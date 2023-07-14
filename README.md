@@ -23,26 +23,102 @@
 ### Usage example
 
 ```js
-// -- node js --
-Typifier = require('typifier');
-// -- browser --
+// node js
+const Typifier = require('typifier');
+// browser
 <script type="text/javascript" src="js/lib/typifier.bundle.js"></script>
 
 
+// code samples
+Typifier.isArray([1,2,3])                       // => true
+Typifier.isArray("[1,2,3]")                     // => false
 
-// -- code samples --
-Typifier.getType("sample");
-// => "string"
-Typifier.getType([1,2,3]);
-// => "Array"
-Typifier.isArray([1,2,3]);
-// => true 
-Typifier.is('Array',"no_array");
-// => false 
-Typifier.is('MyClass',new MyClass());
-// => true
-Typifier.isNumberString('50.25');
-// => true
+Typifier.isObject({ a: b })                     // => true
+Typifier.isObject([1,2,3])                      // => false
+
+Typifier.isString("superString")                // => true
+Typifier.isString(123)                          // => false
+Typifier.isString(new String("string class"))   // => false
+
+Typifier.isStringClass(new String('abc'))       // => true
+Typifier.isStringClass("primitive String")      // => false
+
+Typifier.isNumber(123)                          // => true
+Typifier.isNumber(123.45)                       // => true
+Typifier.isNumber("123")                        // => false
+Typifier.isNumber(new Number(123))              // => false
+
+Typifier.isNumberClass(new Number(123))         // => true
+Typifier.isNumberClass(123)                     // => false
+
+Typifier.isNumberString("123")                  // => true
+Typifier.isNumberString("123.55")               // => true
+Typifier.isNumberString("0x123")                // => true
+Typifier.isNumberString(123)                    // => false
+
+Typifier.isDate(new Date())                     // => true
+Typifier.isDate(123)                            // => false
+Typifier.isDate("2021-01-01T00:00:00Z")         // => false (class check only)
+
+Typifier.isRegExp(/abc/g)                       // => true
+Typifier.isRegExp("/abc/g")                     // => false
+
+Typifier.isNaN(NaN)                             // => true
+Typifier.isNaN(123)                             // => false
+
+Typifier.isInfinity(Infinity)                   // => true
+Typifier.isInfinity(NaN)                        // => false
+
+Typifier.isUndefined(undefined)                 // => true
+Typifier.isUndefined(0)                         // => false
+
+Typifier.isNull(null)                           // => true
+Typifier.isNull(false)                          // => false
+
+Typifier.isBoolean(true)                        // => true
+Typifier.isBoolean(false)                       // => true
+Typifier.isBoolean("")                          // => false
+Typifier.isBoolean(new Boolean(true))           // => false
+
+Typifier.isBooleanClass(new Boolean(true))      // => true
+Typifier.isBooleanClass(new Boolean(false))     // => true
+Typifier.isBooleanClass(true)                   // => false
+
+Typifier.isFunction((a) => {})                  // => true
+Typifier.isFunction("cool")                     // => false
+
+Typifier.isClass(Typifier)                      // => true
+Typifier.isClass("stringy")                     // => false
+
+Typifier.is("Typifier", Typifier)               // => true
+Typifier.is("MyClass", MyClass)                 // => true
+Typifier.is("String", "some string")            // => true
+Typifier.is("Array", [1,2,3])                   // => true
+Typifier.is("String", 123)                      // => false
+
+Typifier.isSet("some string")                   // => true
+Typifier.isSet("")                              // => true
+Typifier.isSet(0)                               // => true
+Typifier.isSet(false)                           // => true
+Typifier.isSet(undefined)                       // => false
+Typifier.isSet(null)                            // => false
+
+Typifier.getType("some string")                 // => "string"
+Typifier.getType(new String("some string"))     // => "String"
+Typifier.getType(123)                           // => "number"
+Typifier.getType(new Number(123))               // => "Number"
+Typifier.getType(Typifier)                      // => "class"
+Typifier.getType({ a: 1})                       // => "Object"
+Typifier.getType([1,2,3])                       // => "Array"
+Typifier.getType(null)                          // => "null"
+Typifier.getType(undefined)                     // => "undefined"
+Typifier.getType(Infinity)                      // => "Infinity"
+Typifier.getType(NaN)                           // => "NaN"
+Typifier.getType(() => {})                      // => "function"
+Typifier.getType(true)                          // => "boolean"
+Typifier.getType(new Boolean(true))             // => "Boolean"
+Typifier.getType(/regex/g)                      // => "RegExp"
+
 ```
 
 <a name="installation"></a>
