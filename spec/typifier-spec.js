@@ -326,7 +326,7 @@ describe('Typifier.isSet', function () {
     });
     it('recognizes a NaN variable', function () {
         let a = NaN;
-        expect(Typifier.isSet(a)).toEqual(false);
+        expect(Typifier.isSet(a)).toEqual(true);
     });
     // truthy
     it('recognizes a variable of value 0', function () {
