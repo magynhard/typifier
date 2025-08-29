@@ -1,6 +1,6 @@
 {
   "name": "typifier",
-  "version": "0.1.2",
+  "version": "0.2.1",
   "description": "The javascript library to get or check the type of a given variable.",
   "exports": {
     ".": "./src/typifier/typifier.js",
@@ -32,8 +32,8 @@
     "jsdoc": "^3.6.6",
     "jsdoc-to-markdown": "^6.0.1",
     "ruby-nice": "^0.1.5",
-    "uglify-js": "^3.12.1",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "uglify-js": "^3.12.1"
   },
   "keywords": [
     "javascript",
