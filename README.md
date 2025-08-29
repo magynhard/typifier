@@ -69,6 +69,9 @@ Typifier.isNaN(123)                             // => false
 Typifier.isInfinity(Infinity)                   // => true
 Typifier.isInfinity(NaN)                        // => false
 
+Typifier.isNegativeInfinity(-Infinity)          // => true
+Typifier.isNegativeInfinity(Infinity)           // => false
+
 Typifier.isUndefined(undefined)                 // => true
 Typifier.isUndefined(0)                         // => false
 

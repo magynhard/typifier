@@ -170,6 +170,37 @@ describe('Typifier', function () {
         it('can recognize invalid Infinity (NaN)', function () {
             expect(Typifier.isInfinity(NaN)).toEqual(false);
         });
+        it('can recognize invalid Infinity (-Infinity)', function () {
+            expect(Typifier.isInfinity(-Infinity)).toEqual(false);
+        });
+    });
+    describe('.isNegativeInfinity()', function () {
+        it('can recognize -Infinity value', function () {
+            [-Infinity].eachWithIndex((val, i) => {
+                expect(Typifier.isNegativeInfinity(val)).toEqual(true, val);
+            });
+        });
+        it('can recognize invalid -Infinity (number)', function () {
+            expect(Typifier.isNegativeInfinity(1)).toEqual(false);
+        });
+        it('can recognize invalid -Infinity (string)', function () {
+            expect(Typifier.isNegativeInfinity('null')).toEqual(false);
+        });
+        it('can recognize invalid -Infinity (undefined)', function () {
+            expect(Typifier.isNegativeInfinity(undefined)).toEqual(false);
+        });
+        it('can recognize invalid -Infinity (object)', function () {
+            expect(Typifier.isNegativeInfinity({})).toEqual(false);
+        });
+        it('can recognize invalid -Infinity (null)', function () {
+            expect(Typifier.isNegativeInfinity(null)).toEqual(false);
+        });
+        it('can recognize invalid -Infinity (NaN)', function () {
+            expect(Typifier.isNegativeInfinity(NaN)).toEqual(false);
+        });
+        it('can recognize invalid -Infinity (Infinity)', function () {
+            expect(Typifier.isNegativeInfinity(Infinity)).toEqual(false);
+        });
     });
     describe('.isObject()', function () {
         it('can recognize object value', function () {
@@ -259,6 +290,16 @@ describe('Typifier', function () {
                 expect(Typifier.isFunction(val)).toEqual(true, val);
             });
         });
+        it('can recognize Function value', function () {
+            expect(Typifier.isFunction(Function)).toEqual(false);
+            expect(Typifier.isFunction(new Function())).toEqual(true);
+        });
+        it('can recognize anonymous async arrow function value', function () {
+            expect(Typifier.isFunction(async () => {
+            })).toEqual(true);
+            expect(Typifier.isFunction(async function () {
+            })).toEqual(true);
+        });
         it('can recognize invalid function (number)', function () {
             expect(Typifier.isFunction(1)).toEqual(false);
         });
@@ -282,6 +323,27 @@ describe('Typifier', function () {
             }
 
             expect(Typifier.isFunction(TestClass)).toEqual(false);
+        });
+    });
+    describe('.isClass()', function () {
+        it('can recognize class values', function () {
+            expect(Typifier.isClass(class TestClass {
+            })).toEqual(true);
+            expect(Typifier.isClass(class {})).toEqual(true);
+            expect(Typifier.isClass(class {
+
+            })).toEqual(true);
+            expect(Typifier.isClass(Function)).toEqual(true);
+        });
+        it('can recognize invalid class values (number)', function () {
+            expect(Typifier.isClass(1)).toEqual(false);
+            expect(Typifier.isClass(() => {
+            })).toEqual(false);
+            expect(Typifier.isClass(function () {
+            })).toEqual(false);
+            expect(Typifier.isClass(new Function())).toEqual(false);
+            expect(Typifier.isClass(new Date())).toEqual(false);
+            expect(Typifier.isClass({})).toEqual(false);
         });
     });
 });
